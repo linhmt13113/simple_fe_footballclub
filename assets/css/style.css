@@ -13,6 +13,10 @@ html{
 }
 
 #header{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
     height: 46px;
     background-color: #c70101;
 }
@@ -21,7 +25,9 @@ html{
     list-style: none;
 }
 
-
+#nav {
+    display: inline-block;
+}
 
 #nav li {
     position: relative;
@@ -59,6 +65,9 @@ html{
     
 }
 
+#nav .nav-arrow-down {
+    font-size: 14px;
+}
 
 #nav li a {
     text-decoration: none;
@@ -78,14 +87,42 @@ html{
     
 }
 
+#header .search-btn {
+    float: right;
+    padding: 0 21px;
+        cursor: pointer;
+}
 
+#header .search-btn:hover {
+    background-color: #f44336;
+    cursor: pointer;
+}
+
+#header .search-icon {
+    color: #fff;
+    font-size: 20px;
+    line-height: 46px;
+   
+}
+
+#header #logo {
+    max-width: 100%;
+    max-height: 100%;
+    float: left;
+}
+
+#header #logo-1 {
+    max-width: 100%;
+    max-height: 100%;
+    float: right;
+}
 
 #slider{
-
+    margin-top: 46px;
 }
 
 #content{
-
+    height: 2000px;
 }
 
 #footer{
