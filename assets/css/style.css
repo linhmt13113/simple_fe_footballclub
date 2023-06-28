@@ -17,30 +17,66 @@ html{
     background-color: #000;
 }
 
-#nav {
-
+#nav, .subnav {
+    list-style: none;
 }
 
 #nav li {
+    position: relative;
+    
+}
+
+#nav li:hover .subnav {
+    display: block;
+}
+
+#nav > li {
     display: inline-block;
 }
 
 #nav .subnav {
     display: none;
+    position: absolute;
+    top: 100%;
+    min-width: 160px;
+    background-color: #FFF;
+    box-shadow: 2px 0px 20px rgba(0, 0, 0, 0.4);
 }
 
+#nav .subnav a {
+    color: #000;
+    min-width: 100%;
+    padding: 0 12px;
+    line-height: 38px;
+    
+}
+
+#nav .subnav li:hover a {
+    color: red;
+    background-color: #ccc;
+    
+}
+
+
 #nav li a {
-    color: #fff;
     text-decoration: none;
     line-height: 46px;
     padding: 0 24px;
-}
-
-#nav li:hover a {
-    color: blue;
-    background-color: #ccc;
     display: inline-block;
 }
+
+#nav > li > a {
+    color: #fff;
+    text-transform: uppercase;
+}
+
+#nav > li:hover > a {
+    color: red;
+    background-color: #ccc;
+    
+}
+
+
 
 #slider{
 
