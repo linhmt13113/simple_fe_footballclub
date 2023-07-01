@@ -206,6 +206,61 @@ html{
     border-radius: 8px;
 }
 
+
+/* shop section */
+.shop-section {
+    background-color: #000;
+    color: #fff;
+}
+
+.items-list{
+    margin-top: 32px;
+    padding-bottom: 48px;
+}
+.item {
+    float: left;
+    width: 33.33333%;
+    padding: 0 8px;
+}
+.item-img{
+    display: block;
+    width: 100%;
+    /* cho width: 100%; cho thẻ img thì nó
+    sẽ bằng thẻ cha chứa nó và không bị vượt quá */
+
+}
+
+.item-img:hover {
+    opacity: 0.6;
+}
+
+.item-body {
+    background-color: #FFF;
+    padding: 16px;
+    font-size: 15px;
+}
+
+.item-price,
+.item-desc {
+    color: #000;
+    margin-bottom: 8px;
+    max-height: 100px;
+}
+
+.item-buy-btn {
+    color: #FFF;
+    background-color: #000;
+    text-decoration: none;
+    padding: 12px 16px;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+.item-buy-btn:hover {
+    color: #000;
+    background-color: #ccc;
+}
+
 #footer{
 
 }
