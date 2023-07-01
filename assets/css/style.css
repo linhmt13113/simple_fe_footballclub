@@ -127,9 +127,14 @@ html{
 #slider{
     position: relative;
     margin-top: 46px;
-    padding-top: 50%; /*kích thước tỉ lệ theo chiều ngang của chính nó */
-    background: url('../image/slider/slider.jpg') top center / cover no-repeat;
+    /* padding-top: 50%;  */
+    /* background: url('../image/slider/slider.jpg') top center / cover no-repeat; */
+    
+}
 
+#slider .slider-img {
+    width: 100%;
+    display: block;
 }
 
 #slider .text-content {
@@ -143,12 +148,13 @@ html{
 #slider .text-heading {
     font-weight: 500;
     font-size: 24px;
-    margin: 10px 0;
+    margin-bottom: 40px;
 }
 
 #slider .text-discription {
+    font-weight: 600;
     font-size: 15px;
-    margin: 15px 0;
+    margin-bottom: 30px ;
 }
 
 #content{
