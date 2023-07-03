@@ -275,15 +275,15 @@ html{
 
 
 .modal {
+    display: none;
     position: fixed;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
     background: rgba(0, 0, 0, 0.4);
-     /* Kỹ thuật flexbox:
+    /* Kỹ thuật flexbox:
     Để class modal-container nằm giữa class cha modal thì chúng ta biến class modal thành giao diện display flex bằng cách thêm thuộc tính display: flex; */
-    display: none;
     /* Dùng thuộc tính align-items: center; vào class cha modal để class modal-container nằm giữa chiều cao class cha modal */
     align-items: center;
     /* Dùng thuộc tính justify-content: center; vào class cha modal để class modal-container nằm giữa chiều ngang class cha modal */
@@ -307,7 +307,7 @@ html{
     min-height: 200px;
     position: relative;
     /* Thuộc tính animation giúp chúng ta sử dụng được keyframes */
-    /* animation: modalFaceIn ease 0.5s; */
+    animation: modalFaceIn ease 0.5s;
 }
 
 
@@ -377,4 +377,18 @@ html{
 .modal .modal-footer {
     text-align: right;
     padding: 16px;
+}
+
+/* Muốn khi bấm vào nút buy tickets thì modal cuộn từ trên xuống, chúng ta dùng keyframe */
+@keyframes modalFaceIn {
+    from {
+        /* Điểm bắt đầu cuộn */
+        transform: translateY(-150px);
+        opacity: 0;
+    }
+    to {
+        /* Điểm kết thúc sẽ là ở giữa màn hình (điểm ban đầu khi chúng ta css cho phần modal */
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
