@@ -127,15 +127,17 @@ html{
 #slider{
     position: relative;
     margin-top: 46px;
-    /* padding-top: 50%;  */
-    /* background: url('../image/slider/slider.jpg') top center / cover no-repeat; */
-    
+    padding-top: 50%; 
+    background-image: url('../image/slider/slider1.jpg');
+    background-position: top center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
-#slider .slider-img {
+/* #slider .slider-img {
     width: 100%;
     display: block;
-}
+} */
 
 #slider .text-content {
     position: absolute;
@@ -269,4 +271,110 @@ html{
 
 #footer{
 
+}
+
+
+.modal {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.4);
+     /* Kỹ thuật flexbox:
+    Để class modal-container nằm giữa class cha modal thì chúng ta biến class modal thành giao diện display flex bằng cách thêm thuộc tính display: flex; */
+    display: none;
+    /* Dùng thuộc tính align-items: center; vào class cha modal để class modal-container nằm giữa chiều cao class cha modal */
+    align-items: center;
+    /* Dùng thuộc tính justify-content: center; vào class cha modal để class modal-container nằm giữa chiều ngang class cha modal */
+    justify-content: center;
+    /* margin: auto để căn giữa */
+    margin: auto;
+
+    /* Resonsive cho modal */
+    /* max-width: calc(100% - 32px); */
+}
+
+.modal.open {
+    display: flex;
+}
+
+.modal .modal-container {
+    background-color: #fff;
+    width: 900px;
+    max-width: calc(100% - 32px);
+    /* Không cần đặt height cứng vì có thể sẽ phát triển thêm nội dung dẫn đến height bị tăng */
+    min-height: 200px;
+    position: relative;
+    /* Thuộc tính animation giúp chúng ta sử dụng được keyframes */
+    /* animation: modalFaceIn ease 0.5s; */
+}
+
+
+.modal .modal-header {
+    font-size: 30px;
+    height: 130px;
+    color: #fff;
+    background-color: #ff00008c;
+    padding: 32px 16px;
+    /* Kỹ thuật flex dùng để căn giữa đã được áp dụng phía trên */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal .modal-close {
+    color: #fff;
+    height: 52px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    /* Padding ở đây giúp căn giữa nút close theo cả 4 hướng */
+    padding: 16px;
+    opacity: 0.8;
+} 
+
+.modal .modal-close:hover {
+    color: #000;
+    background-color: #ccc;
+    cursor: pointer;
+}
+
+.modal .modal-body {
+    /* Hầu hết mọi trường hợp phần body đều có padding trái phải nhằm tránh dính các chữ hay chi tiết vào viền */
+    padding: 16px;
+}
+
+.modal .modal-label {
+    /* Thêm thuộc tính display: block; để giúp cho label và input nằm trên các hàng riêng biệt nhờ tính chất block */
+    display: block;
+    font-size: 15px;
+    margin: 24px 0 12px; 
+}
+
+.modal .modal-input {
+    padding: 8px;
+    width: 100%;
+    border: 1px solid #ccc;
+}
+
+.modal #buy-now {
+    width: 100%;
+    background-color: #ff00008c;
+    color: #fff;
+    padding: 16px;
+    margin: 16px 0;
+    border: none;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+.modal #buy-now:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.modal .modal-footer {
+    text-align: right;
+    padding: 16px;
 }
