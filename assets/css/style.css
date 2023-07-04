@@ -6,6 +6,8 @@
 
 html{
     font-family: Arial, Helvetica, sans-serif;
+    /* Thuộc tính scroll-behavior giúp chúng ta tùy chỉnh hành động cuộn */
+    scroll-behavior: smooth;
 }
 
 .clear {
@@ -443,6 +445,28 @@ html{
     float: right;
 }
 
-#footer{
+.map-section img {
+    width: 100%;
+    /* ảnh cứ đặt width 100% là nó co theo kích thước trình duyệt */
+    margin-top: 36px;
 
+}
+
+#footer{
+    padding: 64px 16px;
+    text-align: center;
+}
+
+#footer .social-list {
+    font-size: 32px;
+}
+
+#footer .social-list a {
+    color: #000;
+    text-decoration: none;
+}
+
+#footer .social-list a:hover {
+    background-color: #c70101;
+    color: #ccc;
 }
