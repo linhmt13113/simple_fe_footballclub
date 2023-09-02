@@ -1,0 +1,14 @@
+/* PC Responsive */
+@media (min-width: 64em) {
+}
+
+/* Tablet Responsive */
+@media (min-width: 46.25em) and (max-width: 63.9375em) {
+  #slider .text-heading {
+    margin-bottom: 20px;
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 46.1875em) {
+}
