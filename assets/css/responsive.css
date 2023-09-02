@@ -15,7 +15,8 @@
 
 /* Mobile Responsive */
 @media (max-width: 46.1875em) {
-  .s-col-ful {
+  .s-col-ful,
+  .s-ful-width {
     width: 100%;
   }
 
@@ -76,5 +77,9 @@
 
   #content .member-img {
     width: 80%;
+  }
+
+  .contact-form {
+    margin-top: 16px;
   }
 }
