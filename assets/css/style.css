@@ -43,6 +43,7 @@ html {
   height: 46px;
   background-color: #c70101;
   z-index: 1; /* làm cho header nổi lên k bị chìm so với slider */
+  /* overflow: hidden; */
 }
 
 #nav,
@@ -109,6 +110,14 @@ html {
   background-color: #ccc;
 }
 
+#header .mobile-menu-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: none;
+}
+
+#header .mobile-menu-btn,
 #header .search-btn {
   float: right;
   padding: 0 21px;
@@ -119,6 +128,11 @@ html {
   cursor: pointer;
 }
 
+#header .mobile-menu-btn:hover {
+  background-color: #f44336;
+}
+
+#header .menu-icon,
 #header .search-icon {
   color: #fff;
   font-size: 20px;

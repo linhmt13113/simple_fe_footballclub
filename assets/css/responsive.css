@@ -4,11 +4,64 @@
 
 /* Tablet Responsive */
 @media (min-width: 46.25em) and (max-width: 63.9375em) {
-  #slider .text-heading {
-    margin-bottom: 20px;
+  #slider .text-discription {
+    display: none;
+  }
+
+  #logo-1 {
+    display: none;
   }
 }
 
 /* Mobile Responsive */
 @media (max-width: 46.1875em) {
+  .text-content {
+    display: none;
+  }
+
+  #header {
+    overflow: hidden;
+  }
+
+  #header .search-btn {
+    display: none;
+  }
+
+  #header #logo {
+    display: none;
+  }
+
+  #header #logo-1 {
+    display: none;
+  }
+
+  #header .mobile-menu-btn {
+    display: block;
+  }
+
+  #nav {
+    display: block;
+  }
+
+  #nav > li {
+    display: block;
+  }
+
+  #nav li a {
+    display: block;
+  }
+
+  /* Dùng pseudo element first child để chọn thẻ li đầu tiên */
+  #nav > li:first-child {
+    display: inline-block;
+  }
+
+  #nav .subnav {
+    position: initial;
+    background-color: #cfb5b5;
+  }
+
+  #nav .subnav a {
+    padding: 0 40px;
+  }
 }

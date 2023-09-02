@@ -25,7 +25,7 @@
           <li><a href="#shop">Shop</a></li>
           <li><a href="#contact">Contact Us</a></li>
           <li>
-            <a href="">
+            <a href="#">
               More
               <i class="nav-arrow-down ti-angle-down"></i>
             </a>
@@ -42,6 +42,10 @@
 
         <div class="search-btn">
           <i class="search-icon ti-search"></i>
+        </div>
+
+        <div id="mobile-menu" class="mobile-menu-btn">
+          <i class="menu-icon ti-menu"></i>
         </div>
 
         <a href="#"
@@ -305,21 +309,65 @@
       modal.addEventListener('click', hideBuyItems);
 
       /*
-         Tuy nhiên chúng ta chỉ muốn click vào phần ngoài modal để đóng phần modal đi (cái này liên quan đến tính chất nổi bọt của sự kiện)
+         Tuy nhiên chỉ muốn click vào phần ngoài modal để đóng phần modal đi (cái này liên quan đến tính chất nổi bọt của sự kiện)
         Nổi bọt có nghĩa là khi tạo ra hành vi click của thẻ con thì hành vi click đó có thể lắng nghe được từ những thẻ cha của nó 
-        Do đó khi chúng ta click vào thẻ cha js-modal, bất cứ thẻ con nào bên trong cũng đều nghe được sự kiện đó và thực hiện hành vi đóng phần modal
-        Ý tưởng là chúng ta tìm cách loại trừ đi những thẻ con thuộc phần modal-container trở vào trong là sẽ không bị đóng phần modal 
+        Do đó khi click vào thẻ cha js-modal, bất cứ thẻ con nào bên trong cũng đều nghe được sự kiện đó và thực hiện hành vi đóng phần modal
+        Ý tưởng là tìm cách loại trừ đi những thẻ con thuộc phần modal-container trở vào trong là sẽ không bị đóng phần modal 
         */
 
       const modalContainer = document.querySelector('.js-modal-container');
       /**
-         *Chúng ta có thể viết thẳng function vào trong và không cần phải viết tên. Chúng ta truyền vào một biến event. 
-        Mỗi lần chúng ta click vào một hành vi diễn ra luôn trả cho chúng ta một event,
-        từ cái event này có thể giúp chúng ta ngăn chặn hành vi mặc định 
+          có thể viết thẳng function vào trong và không cần phải viết tên. truyền vào một biến event. 
+        Mỗi lần click vào một hành vi diễn ra luôn trả cho một event,
+        từ cái event này có thể giúp ngăn chặn hành vi mặc định 
         */
       modalContainer.addEventListener('click', function (event) {
         event.stopPropagation('.js-modal-container');
       });
+    </script>
+
+    <script>
+      var header = document.getElementById('header');
+      var mobileMenu = document.getElementById('mobile-menu');
+      // Tạo một biến headerHeight để lưu chiều cao hiện tại của header
+      var headerHeight = header.clientHeight;
+
+      // Code cho đóng/mở mobile menu
+      mobileMenu.onclick = function () {
+        var isClosed = header.clientHeight === headerHeight;
+        // Nếu đang đóng, style thuộc tính height của header thành auto
+        // Nếu đang mở, style thuộc tính height của header thành 46px hoặc null để ẩn menu con đi
+        if (isClosed) {
+          header.style.height = 'auto';
+        } else {
+          header.style.height = null;
+        }
+      };
+      // Code tự động đóng menu khi chọn 1 phần tử trong menu
+      var menuItems = document.querySelectorAll('#nav li a[href*="#"]');
+
+      for (var i = 0; i < menuItems.length; i++) {
+        var menuItem = menuItems[i];
+
+        // Trong JS, khi click, tại chính phần () của function sẽ trả về một event
+        menuItem.onclick = function () {
+          // cần phải đưa biến isParentMenu vào trong để được kiểm tra ngay sau khi click vào, thay vì kiểm tra từ trước
+          // Từ khóa this ở đây để trình duyệt hiểu là chính phần tử được bấm vào
+          var isParentMenu =
+            // nextElementSibling: Kiểm tra xem có thẻ anh chị em nào liền kề hay không
+            this.nextElementSibling &&
+            // nextElementSibling.classList.contains: Kiểm tra xem có thẻ anh chị em nào liền kề chứa class trong ngoặc hay không
+            this.nextElementSibling.classList.contains('subnav');
+
+          // Trong JS thường tránh viết điều kiện ngược như !isParentMenu
+          if (isParentMenu) {
+            // preventDefault() nghĩa là ngăn cản hành động mặc định
+            event.preventDefault();
+          } else {
+            header.style.height = null;
+          }
+        };
+      }
     </script>
   </body>
 </html>
